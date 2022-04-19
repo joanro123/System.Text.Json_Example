@@ -9,7 +9,6 @@ namespace System.Text.Json_Example.Serialization
             //var options = new JsonSerializerOptions
             //{
             //    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            //    PropertyNameCaseInsensitive = true,
             //    DefaultIgnoreCondition = Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
             //};
 
