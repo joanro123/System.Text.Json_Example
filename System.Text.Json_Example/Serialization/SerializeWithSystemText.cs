@@ -29,7 +29,7 @@ namespace System.Text.Json_Example.Serialization
         public async Task<string> SerializeAsync<T>(T value)
         {
             using var stream = new MemoryStream();
-            await JsonSerializer.SerializeAsync(stream, value, value.GetType());
+            await JsonSerializer.SerializeAsync(stream, value);
             stream.Position = 0;
             using var reader = new StreamReader(stream);
             return await reader.ReadToEndAsync();
