@@ -1,0 +1,44 @@
+name: Setting up Actions
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+        - os: windows-latest
+        - os: ubuntu-latest
+        - os: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build --no-restore
+      shell: pwsh
+      
+    - name: Test
+      run: dotnet test --no-build --verbosity ${{ env.verbosity }}
+      env: 
+        verbosity: 'normal'
+        
+  Write:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Write something
+      run: echo "Hello World"
