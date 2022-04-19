@@ -10,7 +10,8 @@ json = serializeWithSystemRuntime.Serialize(systemRuntimeClass);
 Console.WriteLine(json);
 
 var deserializedSystemRuntime = serializeWithSystemRuntime.Deserialize<SystemRuntimeClass>(json);
-Console.WriteLine($"{deserializedSystemRuntime.FirstName} {deserializedSystemRuntime.LastName} {deserializedSystemRuntime.Age}");
+if (deserializedSystemRuntime is not null)
+    Console.WriteLine($"{deserializedSystemRuntime.FirstName} {deserializedSystemRuntime.LastName} {deserializedSystemRuntime.Age}");
 
 Console.WriteLine();
 
@@ -21,7 +22,8 @@ json = serializeWithSystemText.Serialize(systemTextClass);
 Console.WriteLine(json);
 
 var deserializedSystemText = serializeWithSystemText.Deserialize<SystemTextClass>(json);
-Console.WriteLine($"{deserializedSystemText.FirstName} {deserializedSystemText.LastName} {deserializedSystemText.Age}");
+if (deserializedSystemText is not null)
+    Console.WriteLine($"{deserializedSystemText.FirstName} {deserializedSystemText.LastName} {deserializedSystemText.Age}");
 
 
 
