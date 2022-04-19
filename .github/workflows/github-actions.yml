@@ -44,5 +44,4 @@ jobs:
     steps:
     - name: Write something
       run: echo ${{ env.greeting }}
-      run: echo 
       
