@@ -32,4 +32,13 @@ jobs:
       run: dotnet build --no-restore
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity ${{ env.verbosity }}
+      env: 
+        verbosity: 'normal'
+        
+  Write:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Write on screen
+      run: echo "This is a text"
