@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -15,9 +16,6 @@ jobs:
         - os: windows-latest
         - os: ubuntu-latest
         - os: macos-latest
-        
-    env:
-      greeting: 'Hello World'
 
     steps:
     - uses: actions/checkout@v3
@@ -32,24 +30,14 @@ jobs:
       
     - name: Build
       run: dotnet build --no-restore
-      shell: pwsh
       
     - name: Test
       run: dotnet test --no-build --verbosity ${{ env.verbosity }}
-      env: 
+      env:
         verbosity: 'normal'
         
-    - name: Write on screen
-      run: echo ${{ env.greeting }}
-      
-  Write:
+  write:
     runs-on: ubuntu-latest
-    
-    env:
-      greeting: 'Hello'
-      
     steps:
-    - name: Write a text
-      run: echo ${{ env.greeting }}
-        
-
+    - name: Write something
+      run: echo "Hello world"
