@@ -17,7 +17,7 @@ namespace System.Text.Json_Example.Models
             Age = age;
         }
 
-        [DataMember(Name = "firstName", EmitDefaultValue = false)]
+        [DataMember(Name = "firstName", EmitDefaultValue = false)] 
         public string? FirstName { get; set; }
         [DataMember(Name = "lastName")]
         public string LastName { get; set; } = string.Empty;

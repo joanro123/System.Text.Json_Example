@@ -6,22 +6,24 @@ namespace System.Text.Json_Example.Serialization
     {
         public string Serialize<T>(T value)
         {
-            //var options = new JsonSerializerOptions
-            //{
-            //    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            //    DefaultIgnoreCondition = Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
-            //};
-
-            //return JsonSerializer.Serialize(value, options);
-
             return JsonSerializer.Serialize(value);
+        }
+
+        public string SerializeWithOptions<T>(T value)
+        {
+            var options = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                DefaultIgnoreCondition = Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
+            };
+
+            return JsonSerializer.Serialize(value, options);
         }
 
         public T? Deserialize<T>(string json)
         {
                 return JsonSerializer.Deserialize<T>(json);
         }
-
 
 
 
