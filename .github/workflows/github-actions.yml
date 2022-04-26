@@ -38,6 +38,7 @@ jobs:
         verbosity: 'normal'
         
   write:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
     - name: Write something
