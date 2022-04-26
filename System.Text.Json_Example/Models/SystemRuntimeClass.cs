@@ -23,6 +23,5 @@ namespace System.Text.Json_Example.Models
         public string LastName { get; set; } = string.Empty;
         [DataMember(Name = "age", EmitDefaultValue = false)]
         public int? Age { get; set; }
-
     }
 }
