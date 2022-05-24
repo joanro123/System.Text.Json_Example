@@ -32,4 +32,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity ${{ env.verbosity }}
       env:
-        verbosity: 'normal
+        verbosity: 'normal'
