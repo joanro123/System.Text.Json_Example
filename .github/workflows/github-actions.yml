@@ -33,5 +33,3 @@ jobs:
       run: dotnet test --no-build --verbosity ${{ env.verbosity }}
       env:
         verbosity: 'normal
-  
-  
